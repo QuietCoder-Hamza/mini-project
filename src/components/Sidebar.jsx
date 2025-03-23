@@ -25,7 +25,7 @@ const Sidebar = () => {
         <>
           <div className="flex justify-between items-center">
             <Link to="/" onClick={handleCloseSideBar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
-              <SiShopware /> <span>Lease Parking</span>
+              <SiShopware /> <span>Owner</span>
             </Link>
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
@@ -46,24 +46,28 @@ const Sidebar = () => {
                 </p>
                 {item.links.map((link) => (
                   <NavLink
-                    to={`/${link.name}`}
-                    key={link.name}
-                    onClick={handleCloseSideBar}
-                    style={({ isActive }) => ({
-                      backgroundColor: isActive ? currentColor : '',
-                    })}
-                    className={({ isActive }) => (isActive ? activeLink : normalLink)}
-                  >
-                    {link.icon}
-                    <span className="capitalize ">{link.name}</span>
-                  </NavLink>
-                ))}
-              </div>
+                  to={`/${link.name.toLowerCase().replace(/\s+/g, '-').replace(/-+/g, '-')}`}
+                  key={link.name}
+                  onClick={handleCloseSideBar}
+                  style={({ isActive }) => ({
+                    backgroundColor: isActive ? currentColor : '',
+                  })}
+                  className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                >
+                  {link.icon}
+                  {/* 🔥 Only replace hyphens if they exist, keeping original UI */}
+                  <span className="capitalize">{link.name.split('-').join(' ')}</span>
+                </NavLink>
+                
+                
             ))}
           </div>
-        </>
-      )}
-    </div>
+            ))}
+        </div>
+    </>
+  )
+}
+    </div >
   );
 };
 

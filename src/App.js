@@ -66,12 +66,12 @@ const App = () => {
               <Routes>
                 {/* dashboard  */}
                 <Route path="/" element={(<AdminPanel />)} />
-                <Route path="/AdminPanel" element={(<AdminPanel />)} />
+                <Route path="/owner-panel" element={(<AdminPanel />)} />
 
                 {/* pages  */}
-                <Route path="/orders" element={<Orders />} />
-                <Route path="/employees" element={<Employees />} />
-                <Route path="/customers" element={<Customers />} />
+                <Route path="/add-new-parking-spot+" element={<Orders />} />
+                <Route path="/current-user" element={<Employees />} />
+                <Route path="/History" element={<Customers />} />
 
                 {/* apps  */}
                 <Route path="/kanban" element={<Kanban />} />
