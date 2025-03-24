@@ -4,7 +4,8 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { AdminPanel, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
+import { OwnerPanel, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
+import MyParkingSpots from './pages/MyParkingSpots';
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
@@ -65,13 +66,15 @@ const App = () => {
 
               <Routes>
                 {/* dashboard  */}
-                <Route path="/" element={(<AdminPanel />)} />
-                <Route path="/owner-panel" element={(<AdminPanel />)} />
+                <Route path="/" element={(<OwnerPanel />)} />
+                <Route path="/owner-panel" element={(<OwnerPanel />)} />
 
                 {/* pages  */}
                 <Route path="/add-new-parking-spot+" element={<Orders />} />
                 <Route path="/current-user" element={<Employees />} />
                 <Route path="/History" element={<Customers />} />
+                <Route path="/my-parking-spots" element={<MyParkingSpots />} />
+
 
                 {/* apps  */}
                 <Route path="/kanban" element={<Kanban />} />
@@ -85,7 +88,7 @@ const App = () => {
                 <Route path="/bar" element={<Bar />} />
                 <Route path="/pie" element={<Pie />} />
                 <Route path="/financial" element={<Financial />} />
-                <Route path="/color-mapping" element={<ColorMapping />} />
+                {/* <Route path="/color-mapping" element={<ColorMapping />} /> */}
                 <Route path="/pyramid" element={<Pyramid />} />
                 <Route path="/stacked" element={<Stacked />} />
 

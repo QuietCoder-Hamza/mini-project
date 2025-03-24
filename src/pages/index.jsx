@@ -1,4 +1,4 @@
-export { default as AdminPanel } from './AdminPanel';
+export { default as OwnerPanel } from './OwnerPanel';
 export { default as Kanban } from './Kanban';
 export { default as Orders } from './Orders';
 export { default as Employees } from './Employees';
